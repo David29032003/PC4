@@ -1,8 +1,19 @@
 from fastapi import FastAPI, HTTPException, Body
 from pydantic import BaseModel, EmailStr, ValidationError
+from fastapi.middleware.cors import CORSMiddleware
 import aspectlib
 
 app = FastAPI()
+
+# Aspecto para validación dinámica
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],  # Frontend en Vite
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "DELETE"],
+    allow_headers=["*"],
+    expose_headers=["*"]
+)
 
 # Aspecto para validación dinámica
 @aspectlib.Aspect
