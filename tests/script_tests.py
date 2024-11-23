@@ -92,7 +92,7 @@ def test_validar_formulario_correo_invalido():
             "correo": "correo-invalido",  # Correo no válido
         },
     )
-    assert response.status_code == 422  # Cambiamos la expectativa de estado a 422
+    assert response.status_code == 422  # La validación de Pydantic devuelve 422
     assert response.json()["detail"][0]["msg"].startswith("value is not a valid email address")
 
 
