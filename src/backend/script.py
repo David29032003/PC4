@@ -7,7 +7,7 @@ app = FastAPI()
 # Aspecto para validación dinámica
 @aspectlib.Aspect
 def validar_campo(cutpoint, *args, **kwargs):
-    print(f"Validando campo: {cutpoint.__name__}")
+    # print(f"Validando campo: {cutpoint.__name__}")
     try:
         resultado = yield  # Pasa la ejecución al método original
     except ValidationError as e:
