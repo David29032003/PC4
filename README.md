@@ -45,7 +45,7 @@ pip install -r requirements.txt
 #### **4. Ejecutar el servidor**
 Ejecuta el servidor con `script.py` en un terminal:
 ```bash
-python src/script.py
+python src/backend/script.py 
 ```
 El servidor estará disponible en: **http://127.0.0.1:8000**
 
